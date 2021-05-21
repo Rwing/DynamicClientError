@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Bar430</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Foo400\Foo400.Application.Contracts\Foo400.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\Foo400\Foo400.HttpApi.Client\Foo400.HttpApi.Client.csproj" />
+    <ProjectReference Include="..\Bar430.Domain\Bar430.Domain.csproj" />
+    <ProjectReference Include="..\Bar430.Application.Contracts\Bar430.Application.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.Account.Application" Version="4.3.0" />
+    <PackageReference Include="Volo.Abp.Identity.Application" Version="4.3.0" />
+    <PackageReference Include="Volo.Abp.PermissionManagement.Application" Version="4.3.0" />
+    <PackageReference Include="Volo.Abp.TenantManagement.Application" Version="4.3.0" />
+    <PackageReference Include="Volo.Abp.FeatureManagement.Application" Version="4.3.0" />
+  </ItemGroup>
+
+</Project>

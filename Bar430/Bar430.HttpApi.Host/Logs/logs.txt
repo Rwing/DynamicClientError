@@ -1,0 +1,31 @@
+2021-05-21 15:31:54.515 +08:00 [INF] Starting Bar430.HttpApi.Host.
+2021-05-21 15:32:16.435 +08:00 [FTL] Host terminated unexpectedly!
+Volo.Abp.AbpInitializationException: An error occurred during ConfigureServices phase of the module Foo400.Foo400HttpApiClientModule, Foo400.HttpApi.Client, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null. See the inner exception for details.
+ ---> System.Reflection.ReflectionTypeLoadException: Unable to load one or more of the requested types.
+Could not load type 'Volo.Abp.Authorization.Permissions.PermissionDefinitionProvider' from assembly 'Volo.Abp.Authorization, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null'.
+   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.RuntimeModule.GetTypes()
+   at System.Reflection.Assembly.GetTypes()
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionDynamicHttpClientProxyExtensions.AddHttpClientProxies(IServiceCollection services, Assembly assembly, String remoteServiceConfigurationName, Boolean asDefaultServices)
+   at Foo400.Foo400HttpApiClientModule.ConfigureServices(ServiceConfigurationContext context) in D:\source\Tiens.BaseTemplate\DynamicClientError\Foo400\Foo400.HttpApi.Client\Foo400HttpApiClientModule.cs:line 25
+   at Volo.Abp.AbpApplicationBase.ConfigureServices()
+System.TypeLoadException: Could not load type 'Volo.Abp.Authorization.Permissions.PermissionDefinitionProvider' from assembly 'Volo.Abp.Authorization, Version=4.3.0.0, Culture=neutral, PublicKeyToken=null'.
+   --- End of inner exception stack trace ---
+   at Volo.Abp.AbpApplicationBase.ConfigureServices()
+   at Volo.Abp.AbpApplicationBase..ctor(Type startupModuleType, IServiceCollection services, Action`1 optionsAction)
+   at Volo.Abp.AbpApplicationWithExternalServiceProvider..ctor(Type startupModuleType, IServiceCollection services, Action`1 optionsAction)
+   at Volo.Abp.AbpApplicationFactory.Create(Type startupModuleType, IServiceCollection services, Action`1 optionsAction)
+   at Volo.Abp.AbpApplicationFactory.Create[TStartupModule](IServiceCollection services, Action`1 optionsAction)
+   at Microsoft.Extensions.DependencyInjection.ServiceCollectionApplicationExtensions.AddApplication[TStartupModule](IServiceCollection services, Action`1 optionsAction)
+   at Bar430.Startup.ConfigureServices(IServiceCollection services) in D:\source\Tiens.BaseTemplate\DynamicClientError\Bar430\Bar430.HttpApi.Host\Startup.cs:line 12
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor, Boolean wrapExceptions)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.InvokeCore(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass9_0.<Invoke>g__Startup|0(IServiceCollection serviceCollection)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.Invoke(Object instance, IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.ConfigureServicesBuilder.<>c__DisplayClass8_0.<Build>b__0(IServiceCollection services)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.UseStartup(Type startupType, HostBuilderContext context, IServiceCollection services, Object instance)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass13_0.<UseStartup>b__0(HostBuilderContext context, IServiceCollection services)
+   at Microsoft.Extensions.Hosting.HostBuilder.CreateServiceProvider()
+   at Microsoft.Extensions.Hosting.HostBuilder.Build()
+   at Bar430.Program.Main(String[] args) in D:\source\Tiens.BaseTemplate\DynamicClientError\Bar430\Bar430.HttpApi.Host\Program.cs:line 31
